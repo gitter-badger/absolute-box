@@ -11,6 +11,8 @@ A simple lightbox plugin.
 
 MOBILE FULLY WORKING.
 
+Landscape pictures are not supported yet on laptops and desktops or landscape mobile.
+
 ============
 
 ##SET-UP:
