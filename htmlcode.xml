@@ -1,0 +1,12 @@
+<!--ABSOLUTE-BOX-WIDGET-STARTS-->
+<div id="absolute-box-widget">
+    <div>
+        <div id="quit-absolute-box-widget">
+            <img src="quit.png" alt="X"/>
+        </div>
+        <figure>
+            <img src="" alt="Fullsize">
+        </figure>
+    </div>
+</div>
+<!--ABSOLUTE-BOX-WIDGET-ENDS-->
