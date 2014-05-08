@@ -42,9 +42,9 @@ i.e.,
     <img src="http://your-beloved-picture.png" class="absolute-box-widget" alt"picture" />
     
 ##THE CODE:
-The code is doubled in two functions, the first is the $(document).ready(function(){}); and the last one in the $(window).resize(function(){});. I doubled the code to be fully responsive so if you have to edit it, take care to copied it in the last function too!
+The code is doubled into two functions, the first is the $(document).ready(function(){}); and the last one in the $(window).resize(function(){});. I doubled the code to be fully responsive so if you have to edit it, take care to copied it in the last function too!
 
-The cose of the widget will take the SRC attribute in every picture with class="absolute-box-widget" that you will click, and simply transfer the URL in the IMG tag in the #absolute-box-widget HTML code you have copied before from the code.xml file.
+The core of the widget will take the SRC attribute in every picture with class="absolute-box-widget" that you will click, and simply transfer the URL in the IMG tag in the #absolute-box-widget HTML code you have copied before from the code.xml file.
 
     //MAIN FUNCTION
     $(".absolute-box-widget").click(function() {
