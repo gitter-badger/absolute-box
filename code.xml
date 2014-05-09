@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <!--ABSOLUTE-BOX-WIDGET-STARTS-->
 <div id="absolute-box-widget">
     <div>
         <div id="quit-absolute-box-widget">
-            <img src="quit.png" alt="X"/>
+            <img src="minimize.png" alt="Minimize. Reload Quit Picture!"/>
         </div>
         <figure>
             <img src="" alt="Fullsize">
