@@ -12,6 +12,7 @@ A simple lightbox plugin.
 MOBILE FULLY WORKING.
 
 Landscape pictures are now supported!
+
 ============
 
 ##SET-UP:
