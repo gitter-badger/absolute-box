@@ -51,3 +51,16 @@ you can change it inside the absolute-box.min.js file, don't worry if it's minif
     !function(a){var b="minimize.png";
 
 ###5 ENJOY
+
+=======================
+
+####CONFLICTS ISSUE:
+
+This plugin is creating new DOM elements, most of them have a UNIQUE ID, the ID used to create the necessary elements dom are:
+
+    #absolute-box-widget;
+    #quit-absolute-box-widget;
+    #relative-picfigbox-absolute-widget;
+    fullscreen-absolute-box-widget;
+    
+If you are getting conflicts problem, please, contact me!
