@@ -1,6 +1,8 @@
-//ABSOLUTE-BOX 3.0 by DCDEIV: www.github.com/dcdeiv
+//ABSOLUTE-BOX 3.0.2 by DCDEIV: www.github.com/dcdeiv
 (function ( $ ) {
-    var SRCminimizer = 'minimize.png';
+    var SRCminimizer = 'minimize@2x.png';
+    var minimizerWidth = '50px'
+    var minimizerHeight = 'auto'
     
     $(document).ready(function(){
         var b = $('body');
@@ -10,7 +12,7 @@
         var box1c = box.children(':first-child');
         box1c.append('<div id="quit-absolute-box-widget">', '<figure id="relative-picfigbox-absolute-widget"></figure>');
         var quitBox = $('#quit-absolute-box-widget');
-        quitBox.append('<img src="' + SRCminimizer + '" alt="minimize" />');
+        quitBox.append('<img src="' + SRCminimizer + '" width="' + minimizerWidth + ' height="' + minimizerHeight + ' alt="minimize" />');
         var figBox = $('#relative-picfigbox-absolute-widget');
         figBox.append('<img id="fullscreen-absolute-box-widget" src=""/>');
         var picFigBox = $('#fullscreen-absolute-box-widget');        
@@ -42,8 +44,8 @@
                      bottom: '',
                      left: '',
                      zIndex: 300000000,
-                     width: '50px',
-                     height: '50px',
+                     width: minimizerWidth,
+                     height: minimizerHeight,
                      backgroundColor: 'rgba(0,0,0,0.5)',
                      color: '#fff',
                      webkitBorderRadius: '0.5em',
