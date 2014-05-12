@@ -15,33 +15,34 @@ Landscape pictures are now supported!
 
 ============
 
+When I was programming this plugin I thought about how difficult is to set-up other plugins so I decided to program a simple-to-set-up plug-in!!
+
 ##SET-UP:
 
-Grab the code in the code.XML file (of course not the XML declaration) and put it wherever you want in your *.HTML page! No matter where it will be positioned in the HTML file because the CSS will put it above everything in the page.
+###1 INCLUDE:
+Grab the absolute-box.min.js file and include it in the page where you whant this feature.
 
-    <!--ABSOLUTE-BOX-WIDGET-STARTS-->
-    <div id="absolute-box-widget">
-        <div>
-            <div id="quit-absolute-box-widget">
-                <img src="minimize.png" alt="Minimize. Reload Quit Picture!"/>
-            </div>
-            <figure>
-                <img src="" alt="Fullsize">
-            </figure>
-        </div>
-    </div>
-    <!--ABSOLUTE-BOX-WIDGET-ENDS-->
+###2 RUN THE PLUGIN
+Add
+
+    $(document).ready(function(){
+        $('.absolute-box-widget').absoluteBoxWidget();
+    });
+            
+to the SCRIPT tag of your page or of another *.JS file.
+(of course if you are running already a document ready function, just copy the function.)
+
+###3 CHOOSE YOUR SELECTOR
+Choose your selector. It works only with pictures, so select the picture(s) you want to be displayed in the plugin.
+
+    <IMG src="your-beloved-picture.ext" alt="my picture" CLASS/ID="absolute-box-widget" />
     
-Once you've done this I suggest you to upload the picture or whatever you want to use in the #quit-absolute-box-widget div, otherwise you will see the message to upload the picture. You will be provided with the *.PSD file easily editable with photoshop.
+so you can pick all pictures in the page, or just some pictures according to the id or class you choose.
+            
+###4 UPDATE THE MINIFIER PICTURE SRC
+update the minifier SRC picture (50px x 50px maximum)
+you can change it inside the absolute-box.min.js file, don't worry if it's minified, you will find it in the very first line:
 
-As you have noticed there is no *.CSS file to be edited, that's why I used jQuery to manipulate all styles to just have one file to be included in your website! The minified file only weight 3KB (instead of 9KB)!
+    !function(a){var b="minimize.png";
 
-######eventually you just have to put the class="absolute-box-widget" in every IMG tag you want to be displayed!
-i.e.,
-
-    <img src="http://your-beloved-picture.png" class="absolute-box-widget" alt"picture" />
-    
-That's all you have to know!
-Simple and clean!
-
-enjoy!
+###5 ENJOY
