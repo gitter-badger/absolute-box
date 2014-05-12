@@ -61,6 +61,8 @@ This plugin is creating new DOM elements, most of them have a UNIQUE ID, the ID 
     #absolute-box-widget;
     #quit-absolute-box-widget;
     #relative-picfigbox-absolute-widget;
-    fullscreen-absolute-box-widget;
+    #fullscreen-absolute-box-widget;
+    
+No classes are used.    
     
 If you are getting conflicts problem, please, contact me!
