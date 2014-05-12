@@ -246,6 +246,5 @@
             });
             return this;
         };
-    $('.boxme').absoluteBoxWidget();
     });
 }(jQuery));
