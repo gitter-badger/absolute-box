@@ -1,143 +1,91 @@
+//ABSOLUTE-BOX 3.0 by DCDEIV: www.github.com/dcdeiv
 (function ( $ ) {
-    $(document).ready(function(){
-        var w = $(window).width();
-        var h = $(window).height();
-        var h2 = h*0.5;
-        var wAr = w/h;
-        
-        $('#absolute-box-widget').hide();
-        $('#absolute-box-widget').css({
-            "z-index": 100000,
-            "position": "fixed",
-            "top": 0,
-            "left": 0,
-            "right": 0,
-            "bottom": 0,
-            "background-color": "#000",
-        });
-        $('#absolute-box-widget div:first-child').css({
-            "position": "relative",
-        });
-        $('#quit-absolute-box-widget').css({
-            "position": "absolute",
-            "top": "0.5em",
-            "left": "0.5em",
-            "-webkit-border-radius": "0.5em",
-            "-moz-border-radius": "0.5em",
-            "border-radius": "0.5em",
-            "background-color": "rgba(0,0,0,0.5)",
-            "height": "50px",
-            "width": "50px",
-            "z-index": 200000000,
-            "color": "#fff",
-        });
-        $('#absolute-box-widget figure').css({
-            "position": "relative",
-            "max-width": "100%",
-            "max-height": "100%",
-            "width": "100%",
-            "height": "100%",
-            "text-align": "center",
-        });
-        $('#absolute-box-widget figure img').css({
-            "position": "absolute",
-            "top": 0,
-            "right": 0,
-            "bottom": 0,
-            "left": 0,
-        });
-        
-        $.fn.picS = function() {
-            this.filter( "img.absolute-box-widget" ).each(function() {
-                var pic = $( this );
-                pic.click(function(){
-                    var wP = pic.width();
-                    var hP = pic.height();
-                    var pAr = wP/hP;
-                    var nWp = h/pAr;
-                    var nWp2 = nWp*0.5;
-                    var nHp = w/pAr;
-                    var nHp2 = nHp*0.5;
-                    var srcP = pic.attr('src');
-                    
-                    $('#absolute-box-widget figure img').attr('src', srcP);
-                    
-                    if (pAr < wAr) {
-                        $('#absolute-box-widget figure img').css({
-                            "height": h,
-                            "width": "auto",
-                            "position": "relative",
-                            "top": "",
-                            "margin-top": "",
-                        });
-                    } else {
-                        $('#absolute-box-widget figure img').css({
-                            "height": "auto",
-                            "width": "100%",
-                            "position": "absolute",
-                            "top": h2,
-                            "margin-top": -nHp2,
-                        });                            
-                    }
-                    
-                    $('body').css({
-                        "overflow-y": "hidden",
-                    });
-                    
-                    $('#absolute-box-widget').show();
-                    
-                    $(window).resize(function(){
-                        var w = $(window).width();
-                        var h = $(window).height();
-                        var h2 = h*0.5;
-                        var wAr = w/h;
-                        var nWp = h/pAr;
-                        var nWp2 = nWp*0.5;
-                        var nHp = w/pAr;
-                        var nHp2 = nHp*0.5;
-                        
-                        if (pAr < wAr) {
-                            $('#absolute-box-widget figure img').css({
-                                "height": h,
-                                "width": "auto",
-                                "position": "relative",
-                                "top": "",
-                                "margin-top": "",
-                            });
-                        } else {
-                            $('#absolute-box-widget figure img').css({
-                                "height": "auto",
-                                "width": "100%",
-                                "position": "absolute",
-                                "top": h2,
-                                "margin-top": -nHp2,
-                            });                            
-                        }                        
-                    });
-                                             
-                    $('#quit-absolute-box-widget').click(function(){
-                        $('#absolute-box-widget').hide();
-                        $('body').show();
-                        $('body').css({
-                            "overflow-y": "",
-                        });
-                    });
-                });
-            });
-            return this;
-        };
+    var SRCminimizer = 'minimize.png';
     
-        $('.absolute-box-widget').picS();
+    $(document).ready(function(){
+        var b = $('body');
+        b.append('<div id="absolute-box-widget">');
+        var box = $('#absolute-box-widget');
+        box.append('<div>');
+        var box1c = box.children(':first-child');
+        box1c.append('<div id="quit-absolute-box-widget">', '<figure id="relative-picfigbox-absolute-widget"></figure>');
+        var quitBox = $('#quit-absolute-box-widget');
+        quitBox.append('<img src="' + SRCminimizer + '" alt="minimize" />');
+        var figBox = $('#relative-picfigbox-absolute-widget');
+        figBox.append('<img id="fullscreen-absolute-box-widget" src=""/>');
+        var picFigBox = $('#fullscreen-absolute-box-widget');        
         
-    });
-    $(window).resize(function(){
         var w = $(window).width();
         var h = $(window).height();
         var h2 = h*0.5;
         var wAr = w/h;
                 
-        $.fn.picS = function() {
-            this.filter( "img.absolute-box-widget" ).each(function() {
+        $.fn.absoluteBoxWidgetStyles = function( options ){
+            
+            var defaults = {
+                 boxStyle: {
+                     zIndex: 2000000,
+                     position: 'fixed',
+                     top: 0,
+                     right: 0,
+                     bottom: 0,
+                     left: 0,
+                     backgroundColor: '#000',
+                 },
+                 box1cStyle: {
+                     position: 'relative',
+                 },
+                 quitBoxStyle: {
+                     position: 'absolute',
+                     top: '0.5em',
+                     right: '0.5em',
+                     bottom: '',
+                     left: '',
+                     zIndex: 300000000,
+                     width: '50px',
+                     height: '50px',
+                     backgroundColor: 'rgba(0,0,0,0.5)',
+                     color: '#fff',
+                     webkitBorderRadius: '0.5em',
+                     mozBorderRadius: '0.5em',
+                     borderRadius: '0.5em',
+                 },
+                 figBoxStyle: {
+                    position: "relative",
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    width: "100%",
+                    height: "100%",
+                    textAlign: "center",
+                 },
+                 picFigBoxStyle: {
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0,
+                 },
+            };
+            
+            var settings = $.extend( true, {}, defaults, options );
+            
+            return this.each(function(){
+                
+                $(document).ready(function(){
+                    box.hide();
+                    
+                    box.css(settings.boxStyle);
+                    box1c.css(settings.box1cStyle);
+                    quitBox.css(settings.quitBoxStyle);
+                    figBox.css(settings.figBoxStyle);
+                    picFigBox.css(settings.picFigBoxStyle);
+                });
+                
+            });
+        };
+        
+        $.fn.absoluteBoxWidget = function() {
+            this.each(function() {
                 var pic = $( this );
                 pic.click(function(){
                     var wP = pic.width();
@@ -149,10 +97,10 @@
                     var nHp2 = nHp*0.5;
                     var srcP = pic.attr('src');
                     
-                    $('#absolute-box-widget figure img').attr('src', srcP);
+                    picFigBox.attr('src', srcP);
                     
                     if (pAr < wAr) {
-                        $('#absolute-box-widget figure img').css({
+                        picFigBox.css({
                             "height": h,
                             "width": "auto",
                             "position": "relative",
@@ -160,7 +108,7 @@
                             "margin-top": "",
                         });
                     } else {
-                        $('#absolute-box-widget figure img').css({
+                        picFigBox.css({
                             "height": "auto",
                             "width": "100%",
                             "position": "absolute",
@@ -169,11 +117,11 @@
                         });                            
                     }
                     
-                    $('body').css({
+                    b.css({
                         "overflow-y": "hidden",
                     });
                     
-                    $('#absolute-box-widget').show();
+                    box.show();
                     
                     $(window).resize(function(){
                         var w = $(window).width();
@@ -186,7 +134,7 @@
                         var nHp2 = nHp*0.5;
                         
                         if (pAr < wAr) {
-                            $('#absolute-box-widget figure img').css({
+                            picFigBox.css({
                                 "height": h,
                                 "width": "auto",
                                 "position": "relative",
@@ -194,9 +142,8 @@
                                 "margin-top": "",
                             });
                         } else {
-                            $('#absolute-box-widget figure img').css({
+                            picFigBox.css({
                                 "height": "auto",
-
                                 "width": "100%",
                                 "position": "absolute",
                                 "top": h2,
@@ -205,19 +152,97 @@
                         }                        
                     });
                                              
-                    $('#quit-absolute-box-widget').click(function(){
-                        $('#absolute-box-widget').hide();
-                        $('body').show();
-                        $('body').css({
+                    quitBox.click(function(){
+                        box.hide();
+                        b.show();
+                        b.css({
                             "overflow-y": "",
+                        });
+                    });
+                });
+ 
+                $(window).resize(function(){
+                    var w = $(window).width();
+                    var h = $(window).height();
+                    var h2 = h*0.5;
+                    var wAr = w/h;
+                            
+                    pic.click(function(){
+                        var wP = pic.width();
+                        var hP = pic.height();
+                        var pAr = wP/hP;
+                        var nWp = h/pAr;
+                        var nWp2 = nWp*0.5;
+                        var nHp = w/pAr;
+                        var nHp2 = nHp*0.5;
+                        var srcP = pic.attr('src');
+                        
+                        picFigBox.attr('src', srcP);
+                        
+                        if (pAr < wAr) {
+                            picFigBox.css({
+                                "height": h,
+                                "width": "auto",
+                                "position": "relative",
+                                "top": "",
+                                "margin-top": "",
+                            });
+                        } else {
+                            picFigBox.css({
+                                "height": "auto",
+                                "width": "100%",
+                                "position": "absolute",
+                                "top": h2,
+                                "margin-top": -nHp2,
+                            });                            
+                        }
+                        
+                        b.css({
+                            "overflow-y": "hidden",
+                        });
+                        
+                        box.show();
+                        
+                        $(window).resize(function(){
+                            var w = $(window).width();
+                            var h = $(window).height();
+                            var h2 = h*0.5;
+                            var wAr = w/h;
+                            var nWp = h/pAr;
+                            var nWp2 = nWp*0.5;
+                            var nHp = w/pAr;
+                            var nHp2 = nHp*0.5;
+                            
+                            if (pAr < wAr) {
+                                picFigBox.css({
+                                    "height": h,
+                                    "width": "auto",
+                                    "position": "relative",
+                                    "top": "",
+                                    "margin-top": "",
+                                });
+                            } else {
+                                picFigBox.css({
+                                    "height": "auto",
+                                    "width": "100%",
+                                    "position": "absolute",
+                                    "top": h2,
+                                    "margin-top": -nHp2,
+                                });                            
+                            }                        
+                        });
+                                                 
+                        quitBox.click(function(){
+                            box.hide();
+                            b.show();
+                            b.css({
+                                "overflow-y": "",
+                            });
                         });
                     });
                 });
             });
             return this;
         };
-    
-        $('.absolute-box-widget').picS();
-        
     });
 }(jQuery));
