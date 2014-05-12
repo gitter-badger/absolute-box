@@ -84,6 +84,8 @@
             });
         };
         
+        $('body').absoluteBoxWidgetStyles();
+        
         $.fn.absoluteBoxWidget = function() {
             this.each(function() {
                 var pic = $( this );
