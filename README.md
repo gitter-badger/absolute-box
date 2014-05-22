@@ -5,13 +5,11 @@ A simple lightbox plugin.
 
 #####!! IT WORKS ONLY WITH PICTURES !!#####
 
-###[DEMO](http://dcdev.altervista.org/absolute-box/)
+###[DEMO](http://dcdev.altervista.org/plugins/absolute-box/)
 
 ============
 
 MOBILE FULLY WORKING.
-
-Landscape pictures are now supported!
 
 ============
 
