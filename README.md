@@ -48,8 +48,8 @@ you can change it inside the absolute-box.min.js file, don't worry if it's minif
 
     !function(a){var b="../../widgets/absolute-box/minimize@2x.png",c="50px",d="auto";
     
-    "var b" is the SRC;
-    "var c" is the WIDTH;
-    "var d" is the HEIGHT;
-    
+"var b" is the SRC;
+"var c" is the WIDTH;
+"var d" is the HEIGHT;
+
 the picture must be 100px; You don't need to set the height if the picture is squared.
