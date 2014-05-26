@@ -52,21 +52,4 @@ you can change it inside the absolute-box.min.js file, don't worry if it's minif
     "var c" is the WIDTH;
     "var d" is the HEIGHT;
     
-    I suggest to use a 50px picture, to be RETINA READY, you have to upload a 2x size picture, for example if the VAR C is 50px the picture must be 100px; You don't need to set the height if the picture is squared.
-    
-###5 ENJOY
-
-=======================
-
-####CONFLICTS ISSUE:
-
-This plugin is creating new DOM elements, most of them have a UNIQUE ID, the ID used to create the necessary elements dom are:
-
-    #absolute-box-widget;
-    #quit-absolute-box-widget;
-    #relative-picfigbox-absolute-widget;
-    #fullscreen-absolute-box-widget;
-    
-No classes are used.    
-    
-If you are getting conflicts problem, please, contact me!
+the picture must be 100px; You don't need to set the height if the picture is squared.
