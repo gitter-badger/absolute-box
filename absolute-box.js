@@ -1,5 +1,5 @@
-//ABSOLUTE-BOX 3.1 by DcDev: http://dcdev.altervista.org
-(function( $ ) {
+//ABSOLUTE-BOX 3.1 by DcDeiv https://github.com/dcdeiv/
+(function ( $ ) {
     var SRCminimizer = 'minimize@2x.png';
     var minimizerWidth = '50px';
     var minimizerHeight = 'auto';
