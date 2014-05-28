@@ -37,7 +37,7 @@ so you can pick all pictures in the page, or just some pictures according to the
 Add
 
     $(document).ready(function(){
-        $('YOUR-SELECTOR').absoluteBoxWidget();
+        $('YOUR-SELECTOR').absoluteBoxPlugin();
     });
             
 to the SCRIPT tag of your page or into another *.JS file (that file must be after the absolute-box.min.js you included in step 1 AND of course if you are running already a document ready function, just copy the function and paste in it.)
