@@ -1,9 +1,5 @@
-//ABSOLUTE-BOX 3.1 by DcDeiv https://github.com/dcdeiv/
+//ABSOLUTE-BOX 3.2 by DcDeiv https://github.com/dcdeiv/
 (function ( $ ) {
-    var SRCminimizer = 'minimize@2x.png';
-    var minimizerWidth = '50px';
-    var minimizerHeight = 'auto';
-  
     $( document ).ready(function() {
 		
 		var bodyChildren = $( 'body' ).children();
@@ -31,12 +27,13 @@
         
         figBox.append( '<img src="" alt="" />' );
         
-        quitBox.append(
-        '<img src="' + SRCminimizer + '" width="' + minimizerWidth +
-        ' height="' + minimizerHeight + ' alt="minimize" />'
-        );
+        quitBox
+            .append( '<div><div></div><div></div></div>' ); 
         
-        var picFigBox = figBox.children();
+        var quitBox1Rel     = quitBox.children( ':first-child' );
+        var quitBoxBefore   = quitBox1Rel.children( ':first-child' );
+        var quitBoxAfter    = quitBox1Rel.children( ':nth-child( 2 )' );
+        var picFigBox       = figBox.children();
         
         box.css({
             display: 'none',
@@ -56,13 +53,55 @@
             bottom: '',
             left: '',
             zIndex: 300000000,
-            width: minimizerWidth,
-            height: minimizerHeight,
-            '-webkit-border-radius': '0.5em',
-            '-moz-border-radius': '0.5em',
-            borderRadius: '0.5em',
-            backgroundColor: 'rgba(0,0,0,0.5)',
-            color: '#fff'
+            width: '40px',
+            height: '40px',
+            border: '2px solid black',
+            '-webkit-border-radius': '10em',
+            '-moz-border-radius': '10em',
+            borderRadius: '10em',
+            backgroundColor: 'white',
+            float: 'right',
+            cursor: 'pointer'
+        });
+        
+        quitBox1Rel.css({
+            position: 'relative'
+        });
+        
+        quitBoxBefore.css({
+            display: 'block',
+            position: 'absolute',
+            top: '17px',
+            left: '2px',
+            height: '6px',
+            width: '36px',
+            '-webkit-border-radius': '2em',
+            '-moz-border-radius': '2em',
+            borderRadius: '2em',
+            backgroundColor: 'black',
+            '-webkit-transform': 'rotate(45deg)',
+            '-moz-transform': 'rotate(45deg)',
+            '-ms-transform': 'rotate(45deg)',
+            '-o-transform': 'rotate(45deg)',
+            transform: 'rotate(45deg)'
+        });
+        
+        quitBoxAfter.css({
+            display: 'block',
+            position: 'absolute',
+            top: '17px',
+            left: '2px',
+            height: '6px',
+            width: '36px',
+            '-webkit-border-radius': '2em',
+            '-moz-border-radius': '2em',
+            borderRadius: '2em',
+            backgroundColor: 'black',
+            '-webkit-transform': 'rotate(-45deg)',
+            '-moz-transform': 'rotate(-45deg)',
+            '-ms-transform': 'rotate(-45deg)',
+            '-o-transform': 'rotate(-45deg)',
+            transform: 'rotate(-45deg)'
         });
         
         figBox.css({

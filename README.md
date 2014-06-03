@@ -41,15 +41,3 @@ Add
     });
             
 to the SCRIPT tag of your page or into another *.JS file (that file must be after the absolute-box.min.js you included in step 1 AND of course if you are running already a document ready function, just copy the function and paste in it.)
-
-###4 UPDATE THE MINIFIER PICTURE SRC
-update the minifier SRC picture and width!
-you can change it inside the absolute-box.min.js file, don't worry if it's minified, you will find it in the very first line:
-
-    !function(a){var b="../../widgets/absolute-box/minimize@2x.png",c="50px",d="auto";
-    
-"var b" is the SRC;
-"var c" is the WIDTH;
-"var d" is the HEIGHT;
-
-the picture must be 100px; You don't need to set the height if the picture is squared.
