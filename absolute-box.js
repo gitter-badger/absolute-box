@@ -1,4 +1,5 @@
-//ABSOLUTE-BOX 3.2 by DcDeiv https://github.com/dcdeiv/
+// Absolute-Box v3.2 by DcDeiv https://github.com/dcdeiv
+// GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function ( $ ) {
     $( document ).ready(function() {
 		
