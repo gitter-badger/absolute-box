@@ -1,12 +1,7 @@
-//ABSOLUTE-BOX 4 by DcDeiv https://github.com/dcdeiv/
+//ABSOLUTE-BOX 4.0.1 by DcDeiv https://github.com/dcdeiv/
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function( $ ) {
 	$( document ).ready(function() {
-		var touch = function( event ) {
-			event.preventDefault();
-			event.stopPropagation();
-		};
-		
 		$.fn.absoluteBoxPlugin = function( options ) {
 			var defaults = {
 				settings: {
@@ -26,7 +21,6 @@
 						zIndex: 200000,
 						backgroundColor: '#000',
 						color: '#fff',
-						overflow: 'hidden',
 					}
 				},
 				figure: {
@@ -48,12 +42,13 @@
 						bottom: 0,
 						left: 0,
 						margin: 0,
-						padding: '1em',
-						height: 50,
+						padding: '0 1em',
+						height: 75,
 						backgroundColor: 'rgba(46, 46, 46, 0.8)',
 						color: '#FFF',
 						textAlign: 'left',
-						overflow: 'hidden',
+						overflow: 'auto',
+						zIndex: 200002,
 						'-webkit-transition': 'height 1s ease',
 						transition: 'height 500ms ease'
 					},
@@ -67,7 +62,8 @@
 						top: 0,
 						right: 0,
 						bottom: 0,
-						padding: 0
+						padding: 0,
+						zIndex: 200001,
 					},
 					icons: {
 						quit: {
@@ -108,6 +104,7 @@
 						dataName     = config.settings.dataName,
 						$this        = $( this ),
 						thisTagName  = $this.prop( 'tagName' ).toLowerCase(),
+						scrollTop    = $( document ).scrollTop(),
 						clicks       = 0;
 						
 					//defining $figcaption, $parent, and $img var
@@ -132,9 +129,11 @@
 						});
 					
 					box
+						.hide()
 						.prepend( '<figure />' )
 						.append( '<div data-' + dataName + '="nav" />' )
-						.css( config.absoluteBox.style );
+						.css( config.absoluteBox.style )
+						.fadeIn();
 					
 					var figureBox = box.children().filter( 'figure' ),
 						navBox    = box.children().filter(function() {
@@ -158,15 +157,19 @@
 						.html( config.navigation.icons.quit.html )
 						.css( config.navigation.icons.quit.style )
 						.click(function() {
-							box.fadeOut( 500 , function() {
-								box.remove();
-							});
-							
-							$( 'html' ).css({
-								'overflow-y': 'auto'
-							});
-							
-							$( document ).unbind( 'touchmove', touch );
+							$( 'body, html' ).css({
+								position: 'static',
+							})
+							.animate({
+								scrollTop: scrollTop 
+								}, function() {
+									box.fadeOut( function() {
+										box.remove();
+										});
+										$( 'body, html' ).css({
+											'overflow-y': 'auto'
+										});
+								});
 						});
 					
 					//defining linkBox
@@ -237,8 +240,8 @@
 							nHimg  = boxw / imgAR;
 						
 						imgBox.css({
-							maxHeight: boxh,
-							maxWidth: boxw
+							maxHeight: '100%',
+							maxWidth: '100%'
 						});
 							
 						if ( imgAR > boxAR ) {
@@ -254,12 +257,15 @@
 					
 					$( window ).resize();
 					
+					
 					//blocking overflow
-					$( 'html' ).css({
+					$( 'body, html' ).css({
+						position: 'fixed',
+						top: -scrollTop,
+						left: 0,
+						right: 0,
 						'overflow-y' : 'hidden'
 					});
-					
-					$( document ).bind( 'touchmove', touch);
 				});
 			});
 			return this;
