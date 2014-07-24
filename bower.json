@@ -1,0 +1,35 @@
+{
+  "name": "Absolute-Box",
+  "version": "4.0.2",
+  "homepage": "https://github.com/dcdeiv/absolute-box",
+  "authors": [
+    "dcdeiv <davide.dicriscito@gmail.com>"
+  ],
+  "description": "A jQuery lightbox plug-in",
+  "main": "dist/jquery.absolute-box.min.js",
+  "keywords": [
+    "jquery",
+    "lightbox",
+    "absolute-box",
+    "absolute",
+    "box",
+    "img",
+    "figure",
+    "pictures"
+  ],
+  "license": "GPLv2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+  "dependencies": {
+    "jquery": "~1.10.2",
+    "jqueryui": "~1.11.0"
+  },
+  "moduleType": [
+    "globals"
+  ]
+}

@@ -1,4 +1,4 @@
-//ABSOLUTE-BOX 4.0.1 by DcDeiv https://github.com/dcdeiv/
+//ABSOLUTE-BOX 4.0.2 by DcDeiv https://github.com/dcdeiv/
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function( $ ) {
 	$( document ).ready(function() {

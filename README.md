@@ -6,16 +6,16 @@ A plugin to display picture full(window) size.
 ###[DEMO](http://dcdev.altervista.org/plugins/absolute-box/)
 
 This version:
-* Scroll bug fixes;
-* FadeIn/FadeOut animations.
+* Added bower.json
 
-Previous version:
+Previous versions:
+* Scroll bug fixes;
+* FadeIn/FadeOut animations;
 * This plugin now supports `FIGURE`, `IMG` tags;
 * ABSOLUTE-BOX now uses DATA-* attributes;
 * ABSOLUTE-BOX now will be appended to the parent wrapper of the selected only element when the element is clicked;
 * ABSOLUTE-BOX will be removed from the DOM when the quit icon will be clicked;
 * Chance to toggle the figcaption and/or the picture's permalink;
-* TOUCH support;
 * Full customization;
 * ICONS must be loaded separately.
 
