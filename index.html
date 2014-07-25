@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="description" content="A jQuery Lightbox Plug-In">
+	<meta name="author" content="Davide DC" >
+	
+	<title>Absolute Box</title>
+	
+	<link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700|Roboto:400,100,300,500,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/reboot.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/media.css">
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><style type="text/css"></style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+	<script src="components/simple-sidebar/jquery.simplesidebar.js"></script>
+	<!--[if lf IE 9]>
+	<script src="components/html5shiv/dist/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+<div class="wrapper">
+	<header class="main-header">
+		<h1>Simple Sidebar</h1>
+		<h5>v4.0.2</h5>
+		<h6>A jQuery Lightbox Plug-in</h6>
+	</header>
+	
+	<main>
+		<section id="form" class="alignself-center aligncontent-center">
+			<form>
+				<input value="Download" type="button" onclick="window.location.href='https://github.com/dcdeiv/absolute-box/archive/v4.0.2.zip'">
+				<input value="Github" type="button" onclick="window.location.href='https://github.com/dcdeiv/absolute-box/'">
+			</form>
+		</section>
+		
+		<section id="google-drive">
+			<header>
+				<h3>Google Drive</h3>
+			</header>
+			<p>I host all versions of my plug-ins in my Google Drive.</p>
+			<p>If you need or want to browse through all version—from the older to the latest one—feel free to have a glimps at my folder <a href="https://drive.google.com/open?id=0B3Ut5LFyzFKsNG1KSDBlMG1RWUU&authuser=0" target="_blank">here</a>.</p>
+		</section>
+		
+		<section id="github">
+			<header>
+				<h3>GitHub</h3>
+			</header>
+			<pre><code>git clone https://github.com/dcdeiv/absolute-box</code></pre>
+			<p>Help me improve the code!</p>
+			<p>Open an issue, report a bug, push requests, fork and star my repos on <a href="https://www.github.com/dcdeiv/absolute-box/">Github</a>.</p>
+		</section>
+		
+		<section id="bower">
+			<header>
+				<h3>Bower</h3>
+			</header>
+			<p>This package is available at <a href="http://bower.io/" target="_blank">Bower</a>.</p>
+			<p><code>bower install absolute-box</code></p>
+		</section>
+		
+		<hr>
+		
+		<section id="set-up">
+			<header>
+				<h3>Set-Up</h3>
+			</header>
+			
+			<header>
+				<h6>1-Include</h6>
+			</header>
+			
+			<p>Include the <code>jquery.absolute-box.min.js</code> file in your page along with the <code>jQuery</code> library.</p>
+			
+			<header>
+				<h6>2—Class</h6>
+			</header>
+			
+			<p>Give a class to the <code>&lt;figure&gt;</code> or to the <code>&lt;img&gt;</code> tags.</p>
+			
+			<header>
+				<h6><strong>example</strong>:</h6>
+			</header>
+			
+<pre class="code">&lt;figure class=&quot;box-me&quot;&gt;
+  &lt;img src=&quot;#1&quot; /&gt;
+  &lt;figcaption&gt;
+    An awesome figcaption.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;img class=&quot;box-me&quot; src=&quot;#2&quot; /&gt;
+
+&lt;img class=&quot;box-me&quot; src=&quot;#3&quot; /&gt;
+
+&lt;figure class=&quot;box-me&quot;&gt;
+  &lt;img src=&quot;#4&quot; /&gt;
+  &lt;figcaption&gt;
+    An awesome figcaption.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;img class=&quot;box-me&quot; src=&quot;#5&quot; /&gt;
+</pre>
+			
+			<header>
+				<h6>3-Run The Function</h6>
+			</header>
+			
+			<p>A full optioned plug-in comes only with one string! For more options see the <a href="#options">options section</a>.</p>
+			
+			<header>
+				<h6><strong>example</strong>:</h6>
+				<p>The class below is just an example of class.</p>
+			</header>
+			
+<pre class="code">$( '.box-me' ).absoluteBoxPlugin();</pre>
+		</section>
+		
+		<hr>
+		
+		<section id="options">
+			<header>
+				<h3>Options</h3>
+			</header>
+<pre class="code">//Select &quot;figure&quot;s and/or &quot;img&quot;s with a class. Ex: &quot;.box-me&quot;.
+$(&quot;.YOUR-CLASS&quot;).absoluteBoxPlugin({
+  //Global settings of the plug-in.
+  settings: {
+    //The plug-in creates new dom elements that are selected through a data-attribute. If you encounter a conflict with this name, you can change it here.
+    dataName: &quot;absolutebox&quot;,
+    //TRUE or FALSE when true means that you agree to show the picture caption (it works only with figure tags) and false (of course) that you don't want this feature.
+    figcaption: true,
+    //TRUE or FALSE when true means that you agree to show the permalink of picture. (It works for all pictures selected) and false (of course) not.
+    permalink: true,
+  },
+  //From here on there is only the style. Be careful to override this feature. These are the defaults value. You can play with them and customize them as you like.
+  //
+  //absoluteBox holds the style of the plug-in wrapper.
+  absoluteBox: {
+    style: {
+      position: &quot;fixed&quot;,
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      margin: 0,
+      padding: 0,
+      //I suggest to change this rule. It must be above all document's element.
+      zIndex: 200000,
+      //This plug-in use an animate function to disable scrolling. I suggest to use a backgroung-color/backgroundColor that covers everything.
+      backgroundColor: &quot;#000&quot;,
+      color: &quot;#fff&quot;,
+    }
+  },
+  //FIGURE tag style.
+  figure: {
+    style: {
+      position: &quot;relative&quot;,
+      width: &quot;100%&quot;,
+      maxWidth: &quot;100%&quot;,
+      height: &quot;100%&quot;,
+      maxHeight: &quot;100%&quot;,
+      margin: 0,
+      padding: 0,
+      textAlign: &quot;center&quot;
+    }
+  },
+  //figcaption tag style
+  figcaption: {
+    style: {
+      position: &quot;absolute&quot;,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      margin: 0,
+      padding: &quot;0 1em&quot;,
+      height: 75,
+      backgroundColor: &quot;rgba(46, 46, 46, 0.8)&quot;,
+      color: &quot;#FFF&quot;,
+      textAlign: &quot;left&quot;,
+      overflow: &quot;auto&quot;,
+      zIndex: 200002,
+      //vendor prefix must be wrapped in brackets.
+      &quot;-webkit-transition&quot;: &quot;height 1s ease&quot;,
+      transition: &quot;height 500ms ease&quot;
+    },
+    //The height rule is used by the plug-in to animate the figcaption. Figcaptions. Be careful to change that.
+    animation: {
+      height: &quot;50%&quot;
+    }
+  },
+  //This is the navigation bar, by default it is positioned on the right, but you can change it as you like. It holds all the icons.
+  navigation: {
+    style: {
+      position: &quot;absolute&quot;,
+      top: 0,
+      right: 0,
+      bottom: 0,
+      padding: 0,
+      zIndex: 200001,
+    },
+    //ICONS holds all rules for icons
+    icons: {
+      //the QUIT icons is the icon that kill the absolute-box.
+      quit: {
+        style: {
+          position: &quot;relative&quot;,
+          margin: &quot;1em&quot;,
+          width: 50,
+          height: 50,
+          backgroundColor: &quot;#fff&quot;,
+          //vendor prefix must be wrapped in brackets.
+          &quot;-webkit-border-radius&quot;: 24,
+          &quot;-moz-border-radius&quot;: 24,
+          borderRadius: 24
+        },
+        //HTML means that the icon itself is a wrapper. Put in what you like: in image or a div, like I did here below.
+        html: '&lt;div style=&quot;position: absolute; top: 22px; left: 7px; height: 6px; width: 36px; -webkit-border-radius: 2em; -moz-border-radius: 2em; border-radius: 2em; background-color: black; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg)&quot;&gt;&lt;/div&gt;&lt;div style=&quot;position: absolute; top: 22px; left: 7px; height: 6px; width: 36px; -webkit-border-radius: 2em; -moz-border-radius: 2em; border-radius: 2em; background-color: black; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg)&quot;&gt;&lt;/div&gt;'
+      },
+      //the PERMALINK icon is the icon that open (in a new window) the picture by using its URL
+      permalink: {
+        style: {
+          position: &quot;relative&quot;,
+          margin: &quot;1em&quot;,
+          width: 50,
+          height: 50,
+          backgroundColor: &quot;#fff&quot;,
+          &quot;-webkit-border-radius&quot;: 24,
+          &quot;-moz-border-radius&quot;: 24,
+          borderRadius: 24
+        },
+        //HTML means that the icon itself is a wrapper. Put in what you like: in image or a div, like I did here below.
+        html: '&lt;div style=&quot;position: absolute; top: 12px; left:24px; width: 8px; height: 15px; border-top: 4px solid black; border-right: 3px solid black; border-left: 3px solid black; border-radius: .3em; -webkit-transform: rotate(30deg); -moz-transform: rotate(30deg); -ms-transform: rotate(30deg); -o-transform: rotate(30deg); transform: rotate(30deg)&quot;&gt;&lt;/div&gt;&lt;div style=&quot;position: absolute; top:20px; left: 12px; width: 8px; height: 15px; border-right: 3px solid black; border-bottom: 4px solid black; border-left: 3px solid black; border-radius: .3em; -webkit-transform: rotate(30deg); -moz-transform: rotate(30deg); -ms-transform: rotate(30deg); -o-transform: rotate(30deg); transform: rotate(30deg)&quot;&gt;&lt;/div&gt;'
+      }
+    }
+  }
+});
+</pre>
+		</section>
+	</main>
+	
+	<div class="toolbar">
+		<div id="open-sb" class="menu-button menu-left"></div>
+		<a href="#google-drive">
+			<img width="32" height="32" src="pictures/gdrive48@2x.png" alt="Google Drive"></a>
+		<a href="#github">
+			<img width="32" height="32" src="pictures/github48@2x.png" alt="GitHub"></a>
+		<a href="#bower">
+			<img width="32" height="32" src="pictures/bower48@2x.png" alt="Bower"></a>
+	</div>
+</div>
+
+<section class="sidebar">
+	<nav>
+		<h6>Absolute Box</h6>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="#google-drive">Google Drive</a></li>
+			<li><a href="#github">GitHub</a></li>
+			<li><a href="#bower">Bower</a></li>
+			<li><a href="#set-up">Set-Up</a></li>
+			<li><a href="#options">Options</a></li>
+		</ul>
+		
+		<hr>
+		
+		<h6>DcDev</h6>
+		<ul>
+			<li><a href="http://dcdev.altervista.org/">DcDev Homepage</a></li><a href="http://dcdev.altervista.org/">
+			</a><li><a href="http://dcdev.altervista.org/"></a><a href="http://dcdev.altervista.org/plugins/">Other Plugins</a></li>
+			<li><a href="http://www.github.com/dcdeiv">GitHub</a></li>
+		</ul>
+	</nav>
+</div></section>
+
+<a href="https://github.com/dcdeiv/simple-sidebar">
+	<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+<script>
+$( document ).ready(function() {
+	$.ajaxSetup({
+		cache: false
+	});
+
+	$( '.sidebar' ).simpleSidebar({
+		settings: {
+			opener: '#open-sb',
+			wrapper: '.wrapper',
+			animation: {
+				duration: 500,
+				easing: 'easeOutQuint'
+			}
+		},
+		sidebar: {
+			align: 'left',
+			width: 200,
+			closingLinks: 'a',
+		},
+	});
+});
+</script>
