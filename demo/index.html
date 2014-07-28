@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="description" content="A jQuery Lightbox Plug-In">
+	<meta name="author" content="Davide Di Criscito" >
+	
+	<title>Absolute Box</title>
+	
+	<link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700|Roboto:400,100,300,500,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/reboot.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/media.css">
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><style type="text/css"></style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+	<script src="../components/simple-sidebar/dist/jquery.simplesidebar.min.js"></script>
+	<script src="../components/absolute-box/dist/jquery.absolute-box.min.js"></script>
+	<!--[if lf IE 9]>
+	<script src="../components/html5shiv/dist/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+<div class="wrapper">
+	<header class="main-header">
+		<h1>Absolute Box</h1>
+		<h5>DEMO</h5>
+	</header>
+	
+	<main>
+		<section class="gallery">
+			<figure>
+				<img src="https://lh5.googleusercontent.com/-x4RX6N1SQPM/U0K4vseBW_I/AAAAAAAAL1M/B4BkiFajQTU/w1824-h1824-no/IMG_20140406_210943.jpg" alt="Squared Picture"/>
+				<figcaption>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit risus a felis dapibus suscipit. Vivamus id imperdiet neque. Vestibulum vitae erat vel ligula tristique condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam suscipit laoreet dapibus. Sed tempus tempus ante, et tempus eros lacinia in. Curabitur dignissim, magna id suscipit hendrerit, tellus nibh euismod sapien, feugiat venenatis nibh arcu nec ante. Proin tempus justo tempor magna facilisis pretium.</p>
+				</figcaption>
+			</figure>
+
+			<img src="https://lh3.googleusercontent.com/-P8nk5LCYk6Y/UgDGz6zAm8I/AAAAAAAAJGU/WbBlKyd05kM/w2048-h685-no/2013-08-01+%252822%2529.jpg" alt="panorama"/>
+			<img src="https://lh5.googleusercontent.com/-fkGtn6ow6v0/UgDGynRIpyI/AAAAAAAAJGU/naT_DLgudYs/w2048-h485-no/2013-08-02+%252817%2529.jpg" alt="panorama"/>
+			<img src="https://lh4.googleusercontent.com/-AVBEhnhvmTY/Ui3SJQPwkpI/AAAAAAAAJXs/sflVQlfKcEI/w2048-h1536-no/20130908_194332_1.jpg" alt="horizontal 4-3"/>
+			<figure>
+				<img src="https://lh3.googleusercontent.com/-14yAhf8S0EI/UlLDQlzF7lI/AAAAAAAAJxc/eHYT9NfdxIo/w1536-h2048-no/20130926_114024_1.jpg" alt="vertical 4-3">
+				<figcaption>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit risus a felis dapibus suscipit. Vivamus id imperdiet neque. Vestibulum vitae erat vel ligula tristique condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam suscipit laoreet dapibus. Sed tempus tempus ante, et tempus eros lacinia in. Curabitur dignissim, magna id suscipit hendrerit, tellus nibh euismod sapien, feugiat venenatis nibh arcu nec ante. Proin tempus justo tempor magna facilisis pretium.</p>
+				</figcaption>
+			</figure>
+		</section>
+	</main>
+	
+	<div class="toolbar">
+		<div id="open-sb" class="menu-button menu-left"></div>
+	</div>
+</div>
+
+<section class="sidebar">
+	<nav>
+		<h6>Absolute Box</h6>
+		<ul>
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="../index.html#google-drive">Google Drive</a></li>
+			<li><a href="../index.html#github">GitHub</a></li>
+			<li><a href="../index.html#bower">Bower</a></li>
+			<li><a href="../index.html#set-up">Set-Up</a></li>
+			<li><a href="../index.html#options">Options</a></li>
+		</ul>
+		
+		<hr>
+		
+		<h6>DcDev</h6>
+		<ul>
+			<li><a href="http://dcdev.altervista.org/">DcDev Homepage</a></li><a href="http://dcdev.altervista.org/">
+			</a><li><a href="http://dcdev.altervista.org/"></a><a href="http://dcdev.altervista.org/plugins/">Other Plugins</a></li>
+			<li><a href="http://www.github.com/dcdeiv">GitHub</a></li>
+		</ul>
+	</nav>
+</div></section>
+
+<a href="https://github.com/dcdeiv/absolute-box">
+	<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+<script>
+$( document ).ready(function() {
+	$.ajaxSetup({
+		cache: false
+	});
+	
+	
+	
+	$( '.sidebar' ).simpleSidebar({
+		settings: {
+			opener: '#open-sb',
+			wrapper: '.wrapper',
+			animation: {
+				duration: 500,
+				easing: 'easeOutQuint'
+			}
+		},
+		sidebar: {
+			align: 'left',
+			width: 200,
+			closingLinks: 'a',
+		},
+	});
+});
+</script>
