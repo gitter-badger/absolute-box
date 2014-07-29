@@ -53,7 +53,7 @@ Add
 to the SCRIPT tag of your page or into another *.JS file (that file must be after the absolute-box.min.js you included in step 1 AND of course if you are running already a document ready function, just copy the function and paste in it.)
 
 ###CUSTOMIZATION:
-In the package a [main.js](main.js) file is included. In this file you will find the defaults values with which the plugin is set up. You are free to override them. It is not mandatory to re-write all the code in that file, you can just add the line you are interested in (like in this [example](#example-of-usage)).
+In the package a [options.js](dist/options.js) file is included. In this file you will find the defaults values with which the plugin is set up. You are free to override them. It is not mandatory to re-write all the code in that file, you can just add the line you are interested in (like in this [example](#example-of-usage)).
 
 * CSS values can be written in camel-case like `borderBottom` instead of `border-bottom` or you can just wrap all your CSS code into brackets like `'border-bottom'` vendor prefixes are one exception: `'-webkit-border-radius': '1em'`. Vendor prefix in camel cases won't work; 
 * Numbers can be not wrapped into brackets, pixels are default too so `borderBottom: 3,` is OK;
@@ -61,7 +61,7 @@ In the package a [main.js](main.js) file is included. In this file you will find
 * Phrases, sentences, periods, strings, words, they have to be wrapped: `position: 'fixed'`.
 
 ####DEFAULTS OPTIONS
-as in [main.js](main.js) file:
+as in [options.js](dist/options.js) file:
 
     $( document ).ready(function() {
     	$( '.YOUR-CLASS' ).absoluteBoxPlugin({
@@ -113,11 +113,10 @@ as in [main.js](main.js) file:
     				color: '#FFF',
     				textAlign: 'left',
     				overflow: 'hidden',
-    				'-webkit-transition': 'height 1s ease', //transition will animate the figcaption
-    				transition: 'height 500ms ease' //transition will animate the figcaption
     			},
     			animation: {
-    				height: '50%' //the transition animation
+    				duration: 500,
+    				easing: 'swing'
     			}
     		},
     		//navigation is a DIV wrapper that hold all icons
