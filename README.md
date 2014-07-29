@@ -3,8 +3,7 @@ Absolute-Box
 
 A plugin to display picture full(window) size.
 
-###[DEMO](http://dcdev.altervista.org/plugins/absolute-box/)
-
+###[DEMO](http://dcdeiv.github.io/absolute-box)
 This version:
 * Added bower.json
 
