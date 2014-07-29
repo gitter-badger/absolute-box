@@ -69,7 +69,7 @@
 				<h6>1-Include</h6>
 			</header>
 			
-			<p>Include the <code>jquery.absolute-box.min.js</code> file in your page along with the <code>jQuery</code> library.</p>
+			<p>Include the <code>jquery.absolute-box.min.js</code> file in your page along with the <code>jQuery</code> library. (You can add the jqueryui library form more easings)</p>
 			
 			<header>
 				<h6>2—Class</h6>
@@ -79,6 +79,7 @@
 			
 			<header>
 				<h6><strong>example</strong>:</h6>
+				<p>The class below is just an example of a class.</p>
 			</header>
 			
 <pre class="code">&lt;figure class=&quot;box-me&quot;&gt;
@@ -178,15 +179,12 @@ $(&quot;.YOUR-CLASS&quot;).absoluteBoxPlugin({
       backgroundColor: &quot;rgba(46, 46, 46, 0.8)&quot;,
       color: &quot;#FFF&quot;,
       textAlign: &quot;left&quot;,
-      overflow: &quot;auto&quot;,
-      zIndex: 200002,
-      //vendor prefix must be wrapped in brackets.
-      &quot;-webkit-transition&quot;: &quot;height 1s ease&quot;,
-      transition: &quot;height 500ms ease&quot;
+      overflow: &quot;auto&quot;
     },
-    //The height rule is used by the plug-in to animate the figcaption. Figcaptions. Be careful to change that.
+    //The ANIMATION rule is used by the plug-in to animate the figcaption.
     animation: {
-      height: &quot;50%&quot;
+      duration: 500, //ms
+      easing: 'swing' //If you added the jqueryui library you can specify another more beautiful ease.
     }
   },
   //This is the navigation bar, by default it is positioned on the right, but you can change it as you like. It holds all the icons.
@@ -197,7 +195,6 @@ $(&quot;.YOUR-CLASS&quot;).absoluteBoxPlugin({
       right: 0,
       bottom: 0,
       padding: 0,
-      zIndex: 200001,
     },
     //ICONS holds all rules for icons
     icons: {
