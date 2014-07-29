@@ -32,17 +32,17 @@
 	
 	<main>
 		<section class="gallery">
-			<figure>
+			<figure class="box-me">
 				<img src="https://lh5.googleusercontent.com/-x4RX6N1SQPM/U0K4vseBW_I/AAAAAAAAL1M/B4BkiFajQTU/w1824-h1824-no/IMG_20140406_210943.jpg" alt="Squared Picture"/>
 				<figcaption>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit risus a felis dapibus suscipit. Vivamus id imperdiet neque. Vestibulum vitae erat vel ligula tristique condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam suscipit laoreet dapibus. Sed tempus tempus ante, et tempus eros lacinia in. Curabitur dignissim, magna id suscipit hendrerit, tellus nibh euismod sapien, feugiat venenatis nibh arcu nec ante. Proin tempus justo tempor magna facilisis pretium.</p>
 				</figcaption>
 			</figure>
 
-			<img src="https://lh3.googleusercontent.com/-P8nk5LCYk6Y/UgDGz6zAm8I/AAAAAAAAJGU/WbBlKyd05kM/w2048-h685-no/2013-08-01+%252822%2529.jpg" alt="panorama"/>
-			<img src="https://lh5.googleusercontent.com/-fkGtn6ow6v0/UgDGynRIpyI/AAAAAAAAJGU/naT_DLgudYs/w2048-h485-no/2013-08-02+%252817%2529.jpg" alt="panorama"/>
-			<img src="https://lh4.googleusercontent.com/-AVBEhnhvmTY/Ui3SJQPwkpI/AAAAAAAAJXs/sflVQlfKcEI/w2048-h1536-no/20130908_194332_1.jpg" alt="horizontal 4-3"/>
-			<figure>
+			<img class="box-me" src="https://lh3.googleusercontent.com/-P8nk5LCYk6Y/UgDGz6zAm8I/AAAAAAAAJGU/WbBlKyd05kM/w2048-h685-no/2013-08-01+%252822%2529.jpg" alt="panorama"/>
+			<img class="box-me" src="https://lh5.googleusercontent.com/-fkGtn6ow6v0/UgDGynRIpyI/AAAAAAAAJGU/naT_DLgudYs/w2048-h485-no/2013-08-02+%252817%2529.jpg" alt="panorama"/>
+			<img class="box-me" src="https://lh4.googleusercontent.com/-AVBEhnhvmTY/Ui3SJQPwkpI/AAAAAAAAJXs/sflVQlfKcEI/w2048-h1536-no/20130908_194332_1.jpg" alt="horizontal 4-3"/>
+			<figure class="box-me">
 				<img src="https://lh3.googleusercontent.com/-14yAhf8S0EI/UlLDQlzF7lI/AAAAAAAAJxc/eHYT9NfdxIo/w1536-h2048-no/20130926_114024_1.jpg" alt="vertical 4-3">
 				<figcaption>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit risus a felis dapibus suscipit. Vivamus id imperdiet neque. Vestibulum vitae erat vel ligula tristique condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam suscipit laoreet dapibus. Sed tempus tempus ante, et tempus eros lacinia in. Curabitur dignissim, magna id suscipit hendrerit, tellus nibh euismod sapien, feugiat venenatis nibh arcu nec ante. Proin tempus justo tempor magna facilisis pretium.</p>
@@ -88,7 +88,7 @@ $( document ).ready(function() {
 		cache: false
 	});
 	
-	
+	$( '.box-me' ).absoluteBoxPlugin();
 	
 	$( '.sidebar' ).simpleSidebar({
 		settings: {
