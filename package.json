@@ -1,0 +1,59 @@
+{
+  "name": "absolute-box",
+  "version": "5.0.2",
+  "description": "a jQuery lightbox plug-in for <img>s and <figure>s",
+  "main": "dist/jquery.absolute-box.js",
+  "homepage": "https://github.com/dcdeiv/absolute-box#readme",
+  "author": {
+    "name": "Davide Di Criscito",
+    "email": "davide.dicriscito@gmail.com",
+    "url": "https://github.com/dcdeiv"
+  },
+  "license": "MIT AND GPL-2.0",
+  "keywords": [
+    "jquery",
+    "javascript",
+    "js",
+    "jquery-plugin",
+    "plug-in",
+    "absolute-box",
+    "absolutebox",
+    "absolute",
+    "box",
+    "lightbox",
+    "figure",
+    "img",
+    "pictures"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcdeiv/absolute-box.git"
+  },
+  "files": [
+    "demo",
+    "dist",
+    "doc"
+  ],
+  "directories": {
+    "example": "demo",
+    "doc": "doc"
+  },
+  "bugs": {
+    "url": "https://github.com/dcdeiv/absolute-box/issues"
+  },
+  "dependencies": {
+    "jquery": "^1.12.4"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-jscs": "^3.0.1"
+  },
+  "scripts": {
+    "build": "grunt build",
+    "test": "grunt lint"
+  }
+}
